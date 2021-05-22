@@ -71,16 +71,10 @@ namespace CoWin.Auth
             string captchaSource;
             string captchaWithoutNoise = RemoveNoiseFromCaptcha(captchaSvg);
             Bitmap bitmapImage = ConvertCaptchSvgToImage(captchaWithoutNoise);
-            if (Convert.ToBoolean(_configuration["CoWinAPI:Auth:AutoReadCaptcha"]))
-            {
-                captchadata = GetAutoCaptcha(captchaWithoutNoise);
-                captchaSource = "AI-AutoCaptcha";
-            }
-            else
-            {
-                captchadata = new UI.Captcha().GetCaptchaValue(bitmapImage);
-                captchaSource = "Manual-Captcha";
-            }
+
+            captchadata = GetAutoCaptcha(captchaWithoutNoise);
+            captchaSource = "AI-AutoCaptcha";
+            
             Console.WriteLine($"[INFO] Captcha entered is from {captchaSource} and value is {captchadata}");
             return captchadata;
         }
