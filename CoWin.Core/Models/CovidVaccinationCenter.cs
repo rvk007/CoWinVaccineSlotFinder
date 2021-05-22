@@ -35,6 +35,7 @@ namespace CoWiN.Models
             }
             else if (response.StatusCode == HttpStatusCode.Forbidden)
             {
+                Console.Beep(500, 200);
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine($"[FATAL] Response From Server: Too many hits from your IP address, hence request has been blocked. You can try following options :\n1.Switch to a different network which will change your current IP address.\n2.Close the application and try again after sometime ");
                 Console.ResetColor();
@@ -67,6 +68,7 @@ namespace CoWiN.Models
             }
             else if (response.StatusCode == HttpStatusCode.Forbidden)
             {
+                Console.Beep(500, 200);
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine($"[FATAL] Response From Server: Too many hits from your IP address, hence request has been blocked. You can try following options :\n1.Switch to a different network which will change your current IP address.\n2.Close the application and try again after sometime ");
                 Console.ResetColor();
@@ -340,6 +342,7 @@ namespace CoWiN.Models
             }
             else if (response.StatusCode == HttpStatusCode.Forbidden)
             {
+                Console.Beep(500, 200);
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 Console.WriteLine($"[FATAL] Response From Server: Too many hits from your IP address, hence request has been blocked. You can try following options :\n1.Switch to a different network which will change your current IP address.\n2.Close the application and try again after sometime ");
                 Console.ResetColor();
